@@ -1,0 +1,20 @@
+package com.app.dao.impl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.app.model.FinancialYear;
+import com.app.repo.FinancialYearRepository;
+import com.app.service.IFinancialYearService;
+
+public class FinancialYearDaoImpl implements IFinancialYearService{
+
+	@Autowired
+	private FinancialYearRepository repo;
+	@Transactional
+	public Integer saveFinancialYear(FinancialYear f) {
+		f=repo.save(f);
+		return f.getfId();
+	}
+
+}

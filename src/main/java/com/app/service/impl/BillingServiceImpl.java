@@ -13,8 +13,7 @@ public class BillingServiceImpl implements IBillingService{
 	@Autowired
 	private BillingDaoImpl dao;
 	public Integer saveBilling(Billing b) {
-		
-		return dao.saveBilling(b);
+	return dao.saveBilling(b);
 	}
 
 }

@@ -1,7 +1,9 @@
 package com.app.dao;
 
-import com.app.model.FinancialYear;
+import org.springframework.stereotype.Component;
 
+import com.app.model.FinancialYear;
+@Component
 public interface IFinancialYearDao {
 
 	public Integer saveFinancialYear(FinancialYear f);

@@ -1,14 +1,20 @@
 package com.app.dao.impl;
 
-import com.app.model.Billing;
-import com.app.service.IBillingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
-public class ProjectStatusDaoImpl implements IBillingService{
+import com.app.model.ProjectStatus;
+import com.app.repo.ProjectStatusRepository;
+import com.app.service.IProjectStatusService;
 
-	@Override
-	public Integer saveBilling(Billing p) {
-		// TODO Auto-generated method stub
-		return null;
+@Repository
+public class ProjectStatusDaoImpl implements IProjectStatusService{
+
+	@Autowired 
+	private ProjectStatusRepository repo;
+	public Integer saveProjectStatus(ProjectStatus p) {
+		p = repo.save(p);
+		return p.getPsId();
 	}
 
 }

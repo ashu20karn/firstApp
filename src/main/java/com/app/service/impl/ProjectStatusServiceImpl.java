@@ -1,14 +1,19 @@
 package com.app.service.impl;
 
-import com.app.model.Billing;
-import com.app.service.IBillingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-public class ProjectStatusServiceImpl implements IBillingService{
+import com.app.dao.impl.ProjectStatusDaoImpl;
+import com.app.model.ProjectStatus;
+import com.app.service.IProjectStatusService;
 
-	
-	public Integer saveBilling(Billing p) {
-		// TODO Auto-generated method stub
-		return null;
+@Service
+public class ProjectStatusServiceImpl implements IProjectStatusService{
+
+	@Autowired
+	private ProjectStatusDaoImpl dao;
+	public Integer saveProjectStatus(ProjectStatus p) {
+		return dao.saveProjectStatus(p);
 	}
 
 }

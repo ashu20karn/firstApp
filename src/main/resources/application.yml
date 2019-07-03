@@ -7,9 +7,9 @@ spring:
     password: root
     
   jpa:
-    show-sql: false
+    show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
         dialct: org.hibernate.dialect.MySQL5Dialect
